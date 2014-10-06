@@ -1,17 +1,12 @@
 package com.android.tomas.hearforme;
 
 import android.app.Activity;
-import android.app.ActionBar;
-import android.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.content.Intent;
-import android.os.Build;
-
+import android.widget.TextView;
 
 
 public class Myactivity extends Activity {
@@ -20,13 +15,18 @@ public class Myactivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_myactivity);
-        if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }
+        TextView text = (TextView) findViewById(R.id.maintextView);
+        Global g = (Global) getApplication();
+        text.setTextSize(TypedValue.COMPLEX_UNIT_PX, g.getTextSize());
     }
 
+    @Override
+    protected void onResume(){
+        super.onResume();
+        TextView text = (TextView) findViewById(R.id.maintextView);
+        Global g = (Global) getApplication();
+        text.setTextSize(TypedValue.COMPLEX_UNIT_PX, g.getTextSize());
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -34,6 +34,7 @@ public class Myactivity extends Activity {
         getMenuInflater().inflate(R.menu.myactivity, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -45,24 +46,7 @@ public class Myactivity extends Activity {
             Intent intent = new Intent(Myactivity.this,Settings.class);
             startActivity(intent);
             return true;
-            // test
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_myactivity, container, false);
-            return rootView;
-        }
     }
 }

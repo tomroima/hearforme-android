@@ -45,6 +45,7 @@ public class Myactivity extends Activity {
             Intent intent = new Intent(Myactivity.this,Settings.class);
             startActivity(intent);
             return true;
+            // test
         }
         return super.onOptionsItemSelected(item);
     }

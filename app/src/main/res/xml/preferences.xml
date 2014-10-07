@@ -19,7 +19,6 @@
             android:key="dialog_preference"
             android:title="@string/settings_textsize_dialog"
             android:dialogTitle="@string/settings_textsize_dialog"
-            android:dialogLayout="@layout/preferences_custom_dialog"
             android:negativeButtonText="@string/negative"
             android:positiveButtonText="@string/positive"/>
 

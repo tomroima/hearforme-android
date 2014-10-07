@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/settings_title_light">
+
+        <SwitchPreference
+            android:key="switch_preference"
+            android:title="@string/settings_title_light"
+            android:summary="@string/lights_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Text">
+
+        <com.android.tomas.hearforme.CustomDialogPreference
+            android:key="dialog_preference"
+            android:title="@string/settings_textsize_dialog"
+            android:dialogTitle="@string/settings_textsize_dialog"
+            android:dialogLayout="@layout/preferences_custom_dialog"
+            android:negativeButtonText="@string/negative"
+            android:positiveButtonText="@string/positive"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

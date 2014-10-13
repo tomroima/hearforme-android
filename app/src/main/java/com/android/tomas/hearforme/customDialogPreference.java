@@ -14,12 +14,12 @@ import android.widget.TextView;
 /**
  * Created by tomasroigmartinez on 07/10/14.
  */
-public class CustomDialogPreference  extends DialogPreference {
+public class customDialogPreference extends DialogPreference {
     private static final String TAG = Settings.class.getSimpleName();
 
     private int mTextSize;
 
-        public CustomDialogPreference(Context context, AttributeSet attrs) {
+        public customDialogPreference(Context context, AttributeSet attrs) {
             super(context, attrs);
             setDialogLayoutResource(R.layout.preferences_custom_dialog);
 

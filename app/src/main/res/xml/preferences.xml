@@ -14,7 +14,7 @@
             android:persistent="true"
             />
 
-        <com.android.tomas.hearforme.customDialogPreference
+        <com.android.tomas.hearforme.TheCustomDialogPreference
             android:key="dialog_preference"
             android:title="@string/settings_textsize_dialog"
             android:dialogTitle="@string/settings_textsize_dialog"

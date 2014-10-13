@@ -14,5 +14,7 @@
     <string name="settings_textsize_dialog">Text Size</string>
     <string name="positive">OK</string>
     <string name="negative">Cancel</string>
+    <string name="settings_header">Options</string>
+
 
 </resources>

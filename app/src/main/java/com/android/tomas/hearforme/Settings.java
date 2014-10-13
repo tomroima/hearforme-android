@@ -4,8 +4,10 @@ import android.app.Activity;
 
 import android.os.Bundle;
 
+import android.preference.Preference;
 import android.preference.PreferenceFragment;
-
+import android.preference.SwitchPreference;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -22,42 +24,14 @@ public class Settings extends Activity {
                 .replace(android.R.id.content, new SettingsFragment())
                 .commit();
     }
- /*
-    @Override
-    protected void onResume() {
-        super.onResume();
-        TextView text = (TextView) findViewById(R.id.textView);
-        Global g = (Global) getApplication();
-        text.setTextSize(TypedValue.COMPLEX_UNIT_PX, g.getTextSize());
-    }
-*/
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.settings, menu);
         return true;
     }
-    /*
-    public void magnify(View v) {
-        TextView text = (TextView) findViewById(R.id.textView);
-        Log.d(TAG, String.valueOf(text.getTextSize() ));
 
-        text.setTextSize(TypedValue.COMPLEX_UNIT_PX, text.getTextSize() + 4);
-        Global g = (Global) getApplication();
-        g.setTextSize(text.getTextSize());
-
-
-    }
-
-    public void minify(View v){
-        TextView text = (TextView) findViewById(R.id.textView);
-        Log.d(TAG, String.valueOf(text.getTextSize() ));
-
-        text.setTextSize(TypedValue.COMPLEX_UNIT_PX, text.getTextSize() - 4);
-        Global g = (Global) getApplication();
-        g.setTextSize(text.getTextSize());
-    }
-    */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -77,9 +51,13 @@ public class Settings extends Activity {
 
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.preferences);
+            Preference switchPref = findPreference("switch_preference");
+            Log.d(TAG, "Caca");
 
         }
 
     }
-
 }
+
+
+

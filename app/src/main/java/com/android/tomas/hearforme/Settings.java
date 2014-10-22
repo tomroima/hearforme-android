@@ -50,12 +50,12 @@ public class Settings extends Activity  {
         public boolean onPreferenceChange(Preference preference,Object newValue){
             if((Boolean) newValue){
 
-                Myactivity.setMainTextColor(Color.BLACK);
-                Myactivity.setFrameBackgroundColor(Color.WHITE);
+                MainActivity.setMainTextColor(Color.BLACK);
+                MainActivity.setFrameBackgroundColor(Color.WHITE);
 
             }else {
-                Myactivity.setMainTextColor(Color.WHITE);
-                Myactivity.setFrameBackgroundColor(Color.BLACK);
+                MainActivity.setMainTextColor(Color.WHITE);
+                MainActivity.setFrameBackgroundColor(Color.BLACK);
             }
             return true;
         }

@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
-        android:title="@string/settings_header">
+        android:title="@string/settings_options">
 
         <SwitchPreference
             android:id="@+id/settings_switch"
@@ -23,5 +23,25 @@
             />
 
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/settings_language">
+        <ListPreference
+            android:title="@string/input_language"
+            android:key="input_language_preference"
+            android:entries="@array/input_languages_names"
+            android:entryValues="@array/input_languages_codes"
+          />
+
+        <ListPreference
+            android:title="@string/output_language"
+            android:key="output_language_preference"
+            android:entries="@array/input_languages_names"
+            android:entryValues="@array/input_languages_codes"
+            />
+
+        </PreferenceCategory>
+
+
 
 </PreferenceScreen>

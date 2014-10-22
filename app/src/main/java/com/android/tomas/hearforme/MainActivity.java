@@ -1,7 +1,6 @@
 package com.android.tomas.hearforme;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,9 +14,9 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 
-public class Myactivity extends Activity {
+public class MainActivity extends Activity {
 
-    private static final String TAG = Myactivity.class.getSimpleName();
+    private static final String TAG = MainActivity.class.getSimpleName();
 
 
     private static TextView sTextView;
@@ -34,14 +33,22 @@ public class Myactivity extends Activity {
     private void setTextStyle(boolean preference){
         if(preference){
 
-            Myactivity.setMainTextColor(Color.BLACK);
-            Myactivity.setFrameBackgroundColor(Color.WHITE);
+            MainActivity.setMainTextColor(Color.BLACK);
+            MainActivity.setFrameBackgroundColor(Color.WHITE);
 
 
         }else {
-            Myactivity.setMainTextColor(Color.WHITE);
-            Myactivity.setFrameBackgroundColor(Color.BLACK);
+            MainActivity.setMainTextColor(Color.WHITE);
+            MainActivity.setFrameBackgroundColor(Color.BLACK);
         }
+    }
+
+    private void setInputLanguage(String code){
+
+    }
+
+    private void setOutputLanguage(String code){
+
     }
 
     @Override
@@ -56,6 +63,8 @@ public class Myactivity extends Activity {
         sTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
         boolean style = sharedPref.getBoolean("switch_preference",true);
         this.setTextStyle(style);
+        Log.d(TAG,sharedPref.getString("input_language_preference","None"));
+        Log.d(TAG,sharedPref.getString("output_language_preference","None"));
 
     }
 
@@ -68,6 +77,8 @@ public class Myactivity extends Activity {
         sTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
         boolean style = sharedPref.getBoolean("switch_preference",true);
         this.setTextStyle(style);
+        Log.d(TAG,sharedPref.getString("input_language_preference","None"));
+        Log.d(TAG,sharedPref.getString("output_language_preference","None"));
     }
 
     @Override
@@ -95,7 +106,7 @@ public class Myactivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            Intent intent = new Intent(Myactivity.this,Settings.class);
+            Intent intent = new Intent(MainActivity.this,Settings.class);
             startActivity(intent);
             return true;
         }
